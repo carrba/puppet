@@ -5,7 +5,7 @@ class init_disk_carrb {
   file { 'new-datadisk.ps1':
     path   => $scriptpath,
     ensure => "file",
-    source => "puppet:///modules/init_disk_carrb/files/$scriptfile",
+    source => "puppet:///modules/init_disk_carrb//$scriptfile",
   }
   exec { 'Init Disk and Format':
     command  => "start-process -verb runas $powershellexe -argumentlist '-file ${scriptpath}'",

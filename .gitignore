@@ -1,0 +1,10 @@
+chocolatey/
+dsc/
+dsc_disk_carrb/
+dsc_file_carrb/
+powershell/
+reboot/
+registry/
+stdlib/
+wintest_carrb/
+
