@@ -8,7 +8,7 @@ class init_disk_carrb {
     source => "puppet:///modules/init_disk_carrb/files/$scriptfile",
   }
   exec { 'Init Disk and Format':
-    command  => "start-process -verb runas $powershellexe -argumentlist '-file ${wsrpsscriptpath}'",
+    command  => "start-process -verb runas $powershellexe -argumentlist '-file ${scriptpath}'",
     provider => "powershell"
   }
 }
