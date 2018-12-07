@@ -1,5 +1,5 @@
 class init_disk_carrb {
-  scriptfile = "new-datadisk.ps1"
+  $scriptfile = "new-datadisk.ps1"
   $powershellexe = 'C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe'
   $scriptpath = 'C:/Windows/Temp/${wsrpsscriptfile}'
   file { 'new-datadisk.ps1':
