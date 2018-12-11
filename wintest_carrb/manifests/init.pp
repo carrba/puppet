@@ -13,4 +13,12 @@ class wintest_carrb {
     ensure   => latest,
     provider => 'chocolatey',
   }
+ package { 'vscode' :
+    ensure   => latest,
+    provider => 'chocolatey',
+  }
+ package { 'putty' :
+    ensure   => latest,
+    provider => 'chocolatey',
+  }
 }
