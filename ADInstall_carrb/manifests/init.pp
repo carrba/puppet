@@ -1,10 +1,10 @@
 class ad_domaintest(
-    $DomainAdministratorCredential => {
-        'user' => 'jane-doe',
-        'password' => 'jane-password'
-        },
-    $NTDSFolder     = 'S:\NTDS',
-    $SYSVOLFolder   = 'S:\SYSVOL'
+    $domainadmincred = {
+      'user' => 'jane-doe',
+      'password' => 'jane-123!"£'
+    } 
+    $ntdsfolder     = 'S:\NTDS',
+    $sysvolfolder   = 'S:\SYSVOL'
 )
 {
 # Install the AD role
@@ -27,16 +27,16 @@ class ad_domaintest(
     dsc_file { 'SYSVOL Folder':
     dsc_ensure         => 'present',
     dsc_type           => 'Directory',
-    dsc_destinationpath => $SYSVOLFolder,
+    dsc_destinationpath => $sysvolfolder,
   }
 #Config AD Domain 
     dsc_xaddomain {'FirstDS':
     ensure                              => present,
-    dsc_domainname                      => 'domaintest.local',
-    dsc_domainadministratorcredential   => $DomainAdministratorCredential,
-    dsc_safemodeadministratorpassword   => $DomainAdministratorCredential,
-    dsc_databasepath                    => $NTDSFolder,
-    dsc_logpath                         => $NTDSFolder,
-    dsc_sysvolpath                      => $NTDSFolder,
+    dsc_domainname                      => 'celtic.local',
+    dsc_domainadministratorcredential   => $domainadmincred,
+    dsc_safemodeadministratorpassword   => $domainadmincred,
+    dsc_databasepath                    => $ntdsfolder,
+    dsc_logpath                         => $ntdsfolder,
+    dsc_sysvolpath                      => $ntdsfolder,
     }
 }
