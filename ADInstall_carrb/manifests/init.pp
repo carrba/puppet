@@ -32,11 +32,11 @@ class ad_domaintest(
 #Config AD Domain 
     dsc_xaddomain {'FirstDS':
     ensure                              => present,
-    dsc_domainname                      => 'celtic.local',
+    dsc_domainname                      => 'domaintest.local',
     dsc_domainadministratorcredential   => $domainadmincred,
     dsc_safemodeadministratorpassword   => $domainadmincred,
     dsc_databasepath                    => $ntdsfolder,
     dsc_logpath                         => $ntdsfolder,
-    dsc_sysvolpath                      => $ntdsfolder,
+    dsc_sysvolpath                      => $sysvolfolder,
     }
 }
