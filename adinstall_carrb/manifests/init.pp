@@ -1,13 +1,13 @@
-class ad_domaintest(
+class adinstall_carrb (
     $domainadmincred = {
       'user' => 'jane-doe',
-      'password' => 'jane-123!"£'
-    } 
+      'password' => 'jane-123!"£',
+    }, 
     $ntdsfolder     = 'S:\NTDS',
-    $sysvolfolder   = 'S:\SYSVOL'
+    $sysvolfolder   = 'S:\SYSVOL',
 )
 {
-# Install the AD role
+#Install the AD role
     dsc_windowsfeature {'ADDSInstall':
     dsc_ensure => 'present',
     dsc_name   => 'AD-Domain-Services',
@@ -21,7 +21,7 @@ class ad_domaintest(
     dsc_file { 'NTDS Folder':
     dsc_ensure         => 'present',
     dsc_type           => 'Directory',
-    dsc_destinationpath => $NTDSFolder,
+    dsc_destinationpath => $ntdsfolder,
   }
 #ADD SYSVOL folder  
     dsc_file { 'SYSVOL Folder':
@@ -40,3 +40,4 @@ class ad_domaintest(
     dsc_sysvolpath                      => $sysvolfolder,
     }
 }
+
