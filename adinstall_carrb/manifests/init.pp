@@ -7,6 +7,7 @@ class adinstall_carrb (
     $sysvolfolder   = 'S:\SYSVOL',
 )
 {
+require init_disk_carrb
 #Install the AD role
     dsc_windowsfeature {'ADDSInstall':
     dsc_ensure => 'present',
