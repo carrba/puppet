@@ -17,7 +17,7 @@ require init_disk_carrb
     dsc_windowsfeature {'ADDSInstall':
     dsc_ensure => 'present',
     dsc_name   => 'AD-Domain-Services',
-    dsc_notify => Reboot['dsc_reboot'],
+    notify => Reboot['dsc_reboot'],
   }
 #Install the AD Tools
     dsc_windowsfeature {'ADDSTools':
