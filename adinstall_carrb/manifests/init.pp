@@ -8,7 +8,7 @@ class adinstall_carrb (
 )
 {
 require init_disk_carrb
-#Reboot
+#dsc_reboot resource
     reboot {'dsc_reboot':
       when  => pending,
       timeout => 15,
