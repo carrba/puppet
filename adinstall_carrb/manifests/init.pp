@@ -8,10 +8,16 @@ class adinstall_carrb (
 )
 {
 require init_disk_carrb
+#Reboot
+    reboot {'dsc_reboot':
+      when  => pending,
+      timeout => 15,
+    }
 #Install the AD role
     dsc_windowsfeature {'ADDSInstall':
     dsc_ensure => 'present',
     dsc_name   => 'AD-Domain-Services',
+    dsc_notify => Reboot['dsc_reboot'],
   }
 #Install the AD Tools
     dsc_windowsfeature {'ADDSTools':
