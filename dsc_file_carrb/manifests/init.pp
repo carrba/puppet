@@ -13,14 +13,6 @@ class dsc_file_carrb {
     dsc_contents        => lookup('foo'),
   }
 
-  dsc_user{ 'NewUserHieraPwd':
-    dsc_ensure          => 'Present',
-    dsc_fullname        => 'Stephen Fox',
-    dsc_password        => {'user' => 'foxs', 'password' => Sensitive(lookup('serverbuild'))},
-    dsc_username	=> 'foxs',
-    dsc_disabled	=> 'false',
-  }
-
 #  dsc_windowsfeature {'IIS':
 #    dsc_ensure   => 'present',
 #    dsc_name     => 'Web-Server',
