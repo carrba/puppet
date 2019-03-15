@@ -16,7 +16,11 @@ class win_dev_carrb {
     provider => 'chocolatey',
   }
   package { 'winscp' :
-    ensure  => latest,
+    ensure   => latest,
+    provider => 'chocolatey',
+  }
+  package { 'powershell-core' :
+    ensure   => latest,
     provider => 'chocolatey',
   }
 }
