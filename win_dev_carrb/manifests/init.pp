@@ -1,10 +1,5 @@
 class win_dev_carrb {
-  include chocolatey
   package { 'notepadplusplus':
-    ensure   => latest,
-    provider => 'chocolatey',
-  }
-  package { 'chocolatey' :
     ensure   => latest,
     provider => 'chocolatey',
   }
